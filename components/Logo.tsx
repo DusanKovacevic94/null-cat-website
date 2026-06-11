@@ -14,11 +14,11 @@ export function Logo({ compact = false, className = "" }: LogoProps) {
         xmlns="http://www.w3.org/2000/svg"
       >
         <defs>
-          <linearGradient id="catStroke" x1="20" y1="17" x2="98" y2="104" gradientUnits="userSpaceOnUse">
+          <linearGradient id="nullCatStroke" x1="22" y1="20" x2="98" y2="100" gradientUnits="userSpaceOnUse">
             <stop stopColor="#30d4b4" />
             <stop offset="1" stopColor="#07977e" />
           </linearGradient>
-          <filter id="catGlow" x="-20%" y="-20%" width="140%" height="140%">
+          <filter id="nullCatGlow" x="-20%" y="-20%" width="140%" height="140%">
             <feGaussianBlur stdDeviation="2.5" result="blur" />
             <feColorMatrix
               in="blur"
@@ -32,36 +32,59 @@ export function Logo({ compact = false, className = "" }: LogoProps) {
           </filter>
         </defs>
         <path
-          d="M28 61V25L52.5 46H67.5L92 25V61C92 84.2 77.4 99 60 99C42.6 99 28 84.2 28 61Z"
-          stroke="url(#catStroke)"
+          d="M36 36L47 18L58 35"
+          stroke="url(#nullCatStroke)"
+          strokeWidth="7"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          filter="url(#nullCatGlow)"
+        />
+        <path
+          d="M62 35L73 18L84 36"
+          stroke="url(#nullCatStroke)"
+          strokeWidth="7"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          filter="url(#nullCatGlow)"
+        />
+        <circle
+          cx="60"
+          cy="64"
+          r="35"
+          stroke="url(#nullCatStroke)"
           strokeWidth="8"
           strokeLinecap="round"
           strokeLinejoin="round"
-          filter="url(#catGlow)"
+          filter="url(#nullCatGlow)"
         />
         <path
-          d="M10 67H30.5M12.5 80L34.5 73.5M110 67H89.5M107.5 80L85.5 73.5"
-          stroke="url(#catStroke)"
+          d="M36 88L84 40"
+          stroke="url(#nullCatStroke)"
+          strokeWidth="8"
+          strokeLinecap="round"
+          filter="url(#nullCatGlow)"
+        />
+        <path
+          d="M8 61H29M10 74L31 69M112 61H91M110 74L89 69"
+          stroke="url(#nullCatStroke)"
           strokeWidth="5.5"
           strokeLinecap="round"
           strokeLinejoin="round"
-          filter="url(#catGlow)"
+          filter="url(#nullCatGlow)"
         />
         <circle
-          cx="50.5"
-          cy="63"
-          r="3.4"
-          stroke="url(#catStroke)"
-          strokeWidth="2.6"
-          filter="url(#catGlow)"
+          cx="48"
+          cy="61"
+          r="3.2"
+          fill="#30d4b4"
+          filter="url(#nullCatGlow)"
         />
         <circle
-          cx="69.5"
-          cy="63"
-          r="3.4"
-          stroke="url(#catStroke)"
-          strokeWidth="2.6"
-          filter="url(#catGlow)"
+          cx="72"
+          cy="61"
+          r="3.2"
+          fill="#30d4b4"
+          filter="url(#nullCatGlow)"
         />
       </svg>
       <span
