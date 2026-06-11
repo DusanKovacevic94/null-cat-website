@@ -21,7 +21,6 @@ const config: Config = {
       },
       fontFamily: {
         sans: ["var(--font-plus-jakarta-sans)", "Inter", "system-ui", "sans-serif"],
-        mono: ["var(--font-geist-mono)", "ui-monospace", "SFMono-Regular", "monospace"],
       },
     },
   },

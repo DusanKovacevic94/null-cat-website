@@ -35,7 +35,6 @@ export const dictionaries = {
       metrics: [
         { value: "04", label: "Core lanes" },
         { value: "24/7", label: "Automation mindset" },
-        { value: "01", label: "Technical partner" },
       ],
     },
     services: {
@@ -48,18 +47,38 @@ export const dictionaries = {
         {
           title: "Automation",
           copy: "Replace brittle manual workflows with reliable scripts, internal tools, and integrations that save operator time.",
+          examples: [
+            "Route new leads, invoices, support requests, or operational tasks to the right place automatically.",
+            "Connect tools like forms, CRMs, spreadsheets, email, and internal dashboards so the team stops copying data by hand.",
+            "Add alerts, approvals, and audit trails around repetitive work that currently depends on one person remembering every step.",
+          ],
         },
         {
           title: "Web development",
           copy: "Ship fast, maintainable marketing sites, dashboards, portals, and product interfaces with clean foundations.",
+          examples: [
+            "Build fast marketing sites, landing pages, client portals, internal dashboards, and MVP interfaces.",
+            "Create clean admin flows for managing content, users, orders, documents, bookings, or business data.",
+            "Modernize an existing site or app without losing the parts of the business process that already work.",
+          ],
         },
         {
           title: "AI integration",
           copy: "Add useful AI where it fits: support assistants, document processing, content workflows, and data extraction.",
+          examples: [
+            "Summarize, classify, and extract data from documents, emails, tickets, PDFs, and internal knowledge.",
+            "Add assistants that support staff with drafting, search, triage, or customer-facing answers with clear guardrails.",
+            "Turn AI ideas into practical workflows connected to the tools and data your team already uses.",
+          ],
         },
         {
           title: "Data digitalisation",
           copy: "Turn scattered spreadsheets, PDFs, inboxes, and paper processes into structured systems your team can use.",
+          examples: [
+            "Move business-critical information out of paper, inboxes, and disconnected spreadsheets.",
+            "Create structured datasets, searchable records, and dashboards that make operations easier to inspect.",
+            "Clean up manual reporting and give teams one reliable source of truth for recurring decisions.",
+          ],
         },
       ],
     },
@@ -132,23 +151,22 @@ export const dictionaries = {
       languageLabel: "Promeni jezik",
     },
     hero: {
-      eyebrow: "IT sistemi za timove kojima treba konkretna isporuka, ne prazna priča.",
+      eyebrow: "IT sistemi za timove kojima treba konkretan rezultat, ne prazna priča.",
       title: "IT sistemi koji uklanjaju suvišan rad.",
       copy:
         "Null Cat razvija automatizacije, web platforme, AI integracije i tokove podataka za startape i mala i srednja preduzeća.",
       secondaryCta: "Pogledaj usluge",
       panelEyebrow: "Plan isporuke",
-      panelTitle: "Od neuređenog procesa do stabilnog sistema.",
-      panelLines: ["Analiza problema", "Tehničko rešenje", "Razvojni sprint", "Puštanje u rad i stabilizacija"],
+      panelTitle: "Od zastarelih procesa do savremenog stabilnog sistema.",
+      panelLines: ["Analiza izazova", "Tehničko rešenje", "Razvojni sprint", "Puštanje u rad i stabilizacija"],
       metrics: [
         { value: "04", label: "Oblasti rada" },
         { value: "24/7", label: "Procesni pristup" },
-        { value: "01", label: "Tehnički partner" },
       ],
     },
     services: {
       eyebrow: "Usluge",
-      title: "Širok IT kapacitet usmeren na zastoje u poslovanju.",
+      title: "Širok spektar IT rešenja koja pomažu da poslovanje teče bez zastoja.",
       consoleEyebrow: "Pregled usluga",
       consoleTitle: "Izaberite oblast rada. Null Cat je pretvara u upotrebljivo rešenje.",
       previewLabel: "Odabrana usluga",
@@ -156,28 +174,48 @@ export const dictionaries = {
         {
           title: "Automatizacija procesa",
           copy: "Zamenite ručni rad pouzdanim automatizacijama, internim alatima i integracijama koje smanjuju operativno opterećenje.",
+          examples: [
+            "Automatski prosledite upite, fakture, zahteve podrške ili operativne zadatke na pravo mesto.",
+            "Povežite forme, CRM, tabele, email i interne alate kako tim ne bi ručno prepisivao podatke.",
+            "Dodajte obaveštenja, odobrenja i evidenciju koraka za poslove koji trenutno zavise od pamćenja pojedinaca.",
+          ],
         },
         {
           title: "Web razvoj",
           copy: "Razvijte održive web sajtove, aplikacije, dashboarde, portale i korisničke interfejse sa zdravom tehničkom osnovom.",
+          examples: [
+            "Izrada brzih sajtova, landing stranica, klijentskih portala, internih dashboarda i MVP interfejsa.",
+            "Razvoj administrativnih tokova za sadržaj, korisnike, porudžbine, dokumente, rezervacije ili poslovne podatke.",
+            "Modernizacija postojećeg sajta ili aplikacije bez narušavanja procesa koji već dobro funkcionišu.",
+          ],
         },
         {
           title: "AI integracije",
           copy: "Uvedite AI tamo gde donosi realnu vrednost: asistente za podršku, obradu dokumenata, tokove za sadržaj i izvlačenje podataka.",
+          examples: [
+            "Sažimanje, klasifikacija i izvlačenje podataka iz dokumenata, emailova, tiketa, PDF-ova i interne baze znanja.",
+            "AI asistenti koji pomažu timu u pisanju, pretrazi, trijaži ili odgovorima korisnicima, uz jasna pravila kontrole.",
+            "Pretvaranje AI ideja u praktične tokove povezane sa alatima i podacima koje tim već koristi.",
+          ],
         },
         {
           title: "Digitalizacija podataka",
           copy: "Pretvorite tabele, PDF dokumente, inboxe i papirne procese u strukturisane podatke i sisteme koje tim zaista koristi.",
+          examples: [
+            "Prebacivanje važnih poslovnih informacija iz papira, inboxa i nepovezanih tabela u uređen sistem.",
+            "Kreiranje strukturisanih podataka, pretraživih evidencija i dashboarda za bolji pregled poslovanja.",
+            "Sređivanje ručnog izveštavanja i uspostavljanje jednog pouzdanog izvora podataka za odluke koje se ponavljaju.",
+          ],
         },
       ],
     },
     process: {
       eyebrow: "Način rada",
-      title: "Krećemo od stvarnog problema. Gradimo samo ono što ima jasnu svrhu.",
+      title: "Krećemo od stvarnog izazova. Gradimo samo ono što ima jasnu svrhu.",
       copy:
-        "Null Cat rešava nejasne IT probleme: tabelu koja je prerasla u poslovni proces, SaaS alate koji nisu povezani, AI ideju kojoj treba korisna primena ili MVP koji treba dovesti do prvih korisnika.",
+        "Null Cat rešava nejasne IT probleme: tabelu koja je prerasla u *suvišan* poslovni proces *koji iziskuje dodatno vreme*, SaaS alate koji nisu povezani i *optimizovani*, AI ideju kojoj treba *konkretna i korisna* primena ili *MVP* koji treba dovesti do prvih korisnika.",
       steps: [
-        "Mapiramo stvarni tok rada i poslovni problem.",
+        "Mapiramo stvarni tok rada i poslovni izazov.",
         "Biramo najkraći tehnički put do rešenja.",
         "Razvijamo interfejs, automatizaciju ili integraciju.",
         "Merimo rezultat i stabilizujemo ono što postane važno za rad.",
@@ -187,8 +225,8 @@ export const dictionaries = {
       eyebrow: "Primeri rezultata",
       title: "Rešenja koja ubrzavaju rad, uvode red i olakšavaju rast.",
       items: [
-        "Interni alati koji uklanjaju ponavljajući administrativni posao.",
-        "MVP rešenja za startape, postavljena tako da mogu da rastu.",
+        "Interni alati koji uklanjaju duplirani administrativni posao.",
+        "MVP rešenja za startape, postavljena tako da podstiču dalji rast i razvoj organizacije.",
         "AI tokovi za obradu dokumenata i podataka.",
         "Sređivanje zastarelih procesa bez prekida u radu.",
         "API integracije između SaaS alata, CRM sistema, finansija i prilagođenih aplikacija.",
@@ -197,9 +235,9 @@ export const dictionaries = {
     },
     contact: {
       eyebrow: "Zakaži poziv",
-      title: "Pošaljite proces, ideju za proizvod ili problem sa integracijom.",
+      title: "Pošaljite nam upit o svom izazovu, procesu ili ideji za proizvod.",
       copy:
-        "Pošaljite konkretne detalje. Null Cat će odgovoriti predlogom sledećeg koraka: uvodnim pozivom, tehničkom analizom ili okvirnim obimom rada.",
+        "Opišite šta želite da razvijete, automatizujete ili povežete. Null Cat će odgovoriti predlogom sledećeg koraka: uvodnim pozivom, tehničkom analizom ili okvirnim obimom rada.",
     },
     footer: "Automatizacija procesa, web razvoj, AI integracije i digitalizacija podataka.",
     form: {

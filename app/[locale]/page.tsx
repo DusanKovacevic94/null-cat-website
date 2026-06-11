@@ -130,7 +130,7 @@ export default async function LocaleHome({ params }: PageProps) {
             <div className="mt-6 grid gap-3">
               {dictionary.hero.panelLines.map((line, index) => (
                 <div key={line} className="flex items-center gap-4 rounded-md border border-white/8 bg-white/[0.035] p-4">
-                  <span className="font-mono text-sm text-pine-300">{String(index + 1).padStart(2, "0")}</span>
+                  <span className="text-sm font-semibold text-pine-300">{String(index + 1).padStart(2, "0")}</span>
                   <span className="text-sm font-medium text-frost">{line}</span>
                   <span className="ml-auto h-1.5 w-16 overflow-hidden rounded-full bg-white/8">
                     <span className="block h-full rounded-full bg-pine-300" style={{ width: `${52 + index * 12}%` }} />
@@ -183,7 +183,7 @@ export default async function LocaleHome({ params }: PageProps) {
             {dictionary.process.eyebrow}
           </p>
           <h2 className="mt-4 text-3xl font-semibold text-frost sm:text-4xl">{dictionary.process.title}</h2>
-          <p className="mt-5 leading-8 text-steel">{dictionary.process.copy}</p>
+          <p className="mt-5 leading-8 text-steel">{renderMarkedText(dictionary.process.copy)}</p>
         </ScrollReveal>
         <div className="grid gap-4">
           {dictionary.process.steps.map((item, index) => (
@@ -243,4 +243,18 @@ export default async function LocaleHome({ params }: PageProps) {
       </footer>
     </main>
   );
+}
+
+function renderMarkedText(text: string) {
+  return text.split(/(\*[^*]+\*)/g).map((part) => {
+    if (part.startsWith("*") && part.endsWith("*")) {
+      return (
+        <strong key={part} className="font-bold text-pine-300">
+          {part.slice(1, -1)}
+        </strong>
+      );
+    }
+
+    return part;
+  });
 }

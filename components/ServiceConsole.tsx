@@ -5,6 +5,7 @@ import { useState } from "react";
 type Service = {
   title: string;
   copy: string;
+  examples: string[];
 };
 
 type ServiceConsoleProps = {
@@ -20,7 +21,7 @@ export function ServiceConsole({ services, eyebrow, title, previewLabel }: Servi
 
   return (
     <div className="grid gap-5 lg:grid-cols-[0.9fr_1.1fr]">
-      <div className="rounded-lg border border-white/10 bg-ink/70 p-3 backdrop-blur-xl">
+      <div className="self-start rounded-lg border border-white/10 bg-ink/70 p-3 backdrop-blur-xl">
         {services.map((service, index) => {
           const isActive = index === activeIndex;
 
@@ -63,15 +64,11 @@ export function ServiceConsole({ services, eyebrow, title, previewLabel }: Servi
             <span className="h-2.5 w-2.5 rounded-full bg-pine-300 shadow-[0_0_18px_rgba(48,212,180,0.85)]" />
           </div>
           <h4 className="mt-5 text-2xl font-semibold text-frost">{active.title}</h4>
-          <p className="mt-4 max-w-2xl leading-7 text-steel">{active.copy}</p>
-
-          <div className="mt-7 grid gap-3">
-            {[76, 54, 88].map((width, index) => (
-              <div key={`${active.title}-${width}`} className="h-2 overflow-hidden rounded-full bg-white/8">
-                <div
-                  className="h-full rounded-full bg-gradient-to-r from-pine-700 via-pine-400 to-pine-300 transition-all duration-500"
-                  style={{ width: `${Math.max(22, width - activeIndex * 5 + index * activeIndex * 3)}%` }}
-                />
+          <div className="mt-5 grid gap-3">
+            {active.examples.map((example) => (
+              <div key={example} className="flex gap-3 rounded-md border border-white/8 bg-white/[0.035] p-4">
+                <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-pine-300 shadow-[0_0_12px_rgba(48,212,180,0.75)]" />
+                <p className="leading-7 text-steel">{example}</p>
               </div>
             ))}
           </div>
