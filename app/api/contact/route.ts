@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server";
 import { Resend } from "resend";
-import { validateContactPayload } from "@/lib/contact";
+import { projectTypeEmailLabels, validateContactPayload } from "@/lib/contact";
 
 export async function POST(request: Request) {
   let payload: unknown;
@@ -35,7 +35,8 @@ export async function POST(request: Request) {
   }
 
   const resend = new Resend(apiKey);
-  const { name, email, company, projectType, budget, message } = validation.data;
+  const { name, email, company, projectType, message } = validation.data;
+  const projectTypeLabel = projectTypeEmailLabels[projectType as keyof typeof projectTypeEmailLabels] || projectType;
 
   try {
     await resend.emails.send({
@@ -47,8 +48,7 @@ export async function POST(request: Request) {
         `Name: ${name}`,
         `Email: ${email}`,
         `Company: ${company || "Not provided"}`,
-        `Project type: ${projectType}`,
-        `Budget: ${budget}`,
+        `Project type: ${projectTypeLabel}`,
         "",
         message,
       ].join("\n"),

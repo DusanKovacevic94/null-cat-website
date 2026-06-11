@@ -3,7 +3,6 @@ export type ContactPayload = {
   email: string;
   company: string;
   projectType: string;
-  budget: string;
   message: string;
 };
 
@@ -11,22 +10,27 @@ export type ContactValidationResult =
   | { ok: true; data: ContactPayload }
   | { ok: false; errors: Partial<Record<keyof ContactPayload, string>> };
 
-const projectTypes = new Set([
-  "Automation",
-  "Web development",
-  "AI integration",
-  "Data digitalisation",
-  "Startup technical partner",
-  "Not sure yet",
-]);
+export const projectTypeValues = [
+  "automation",
+  "web_development",
+  "ai_integration",
+  "data_digitalisation",
+  "startup_partner",
+  "not_sure",
+] as const;
 
-const budgets = new Set([
-  "Under 2k",
-  "2k - 5k",
-  "5k - 15k",
-  "15k+",
-  "Need guidance",
-]);
+export type ProjectTypeValue = (typeof projectTypeValues)[number];
+
+export const projectTypeEmailLabels: Record<ProjectTypeValue, string> = {
+  automation: "Automation",
+  web_development: "Web development",
+  ai_integration: "AI integration",
+  data_digitalisation: "Data digitalisation",
+  startup_partner: "Startup technical partner",
+  not_sure: "Not sure yet",
+};
+
+const projectTypes = new Set<string>(projectTypeValues);
 
 function clean(value: unknown) {
   return typeof value === "string" ? value.trim() : "";
@@ -39,7 +43,6 @@ export function validateContactPayload(input: unknown): ContactValidationResult 
     email: clean((source as Record<string, unknown>).email),
     company: clean((source as Record<string, unknown>).company),
     projectType: clean((source as Record<string, unknown>).projectType),
-    budget: clean((source as Record<string, unknown>).budget),
     message: clean((source as Record<string, unknown>).message),
   };
 
@@ -51,9 +54,6 @@ export function validateContactPayload(input: unknown): ContactValidationResult 
   }
   if (!projectTypes.has(data.projectType)) {
     errors.projectType = "Choose a project type.";
-  }
-  if (!budgets.has(data.budget)) {
-    errors.budget = "Choose a budget range.";
   }
   if (data.message.length < 20) {
     errors.message = "Add at least 20 characters about the work.";

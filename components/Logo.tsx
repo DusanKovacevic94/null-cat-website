@@ -42,9 +42,25 @@ export function Logo({ compact = false, className = "" }: LogoProps) {
         <path
           d="M10 67H30.5M12.5 80L34.5 73.5M110 67H89.5M107.5 80L85.5 73.5"
           stroke="url(#catStroke)"
-          strokeWidth="8"
+          strokeWidth="5.5"
           strokeLinecap="round"
           strokeLinejoin="round"
+          filter="url(#catGlow)"
+        />
+        <circle
+          cx="50.5"
+          cy="63"
+          r="3.4"
+          stroke="url(#catStroke)"
+          strokeWidth="2.6"
+          filter="url(#catGlow)"
+        />
+        <circle
+          cx="69.5"
+          cy="63"
+          r="3.4"
+          stroke="url(#catStroke)"
+          strokeWidth="2.6"
           filter="url(#catGlow)"
         />
       </svg>

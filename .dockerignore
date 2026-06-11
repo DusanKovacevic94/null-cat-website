@@ -1,11 +1,12 @@
-node_modules
+.git
 .next
+node_modules
 out
 dist
 .env
 .env.production
 .env*.local
-.idea/
+.idea
 tsconfig.tsbuildinfo
 npm-debug.log*
 yarn-debug.log*
